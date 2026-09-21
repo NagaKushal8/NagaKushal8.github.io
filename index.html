@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Naga Kushal Ageeru — AI / ML Engineer</title>
+<meta name="description" content="Projects, skills and education of Naga Kushal Ageeru — AI/ML engineer working on LLM systems, RAG, evals and computer vision.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117; --bg-2:#161b22;
+  --line:#30363d; --line-2:#21262d;
+  --fg:#e6edf3; --fg-2:#9198a1; --fg-3:#6e7681;
+  --accent:#58a6ff; --green:#3fb950; --purple:#bc8cff; --amber:#d29922;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#ffffff; --bg-2:#f6f8fa;
+    --line:#d1d9e0; --line-2:#e4e8ed;
+    --fg:#1f2328; --fg-2:#59636e; --fg-3:#818b98;
+    --accent:#0969da; --green:#1a7f37; --purple:#8250df; --amber:#9a6700;
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg); color:var(--fg); font-family:var(--sans);
+  font-size:15px; line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:980px;margin:0 auto;padding:0 24px}
+
+/* ---------- header ---------- */
+header{padding:64px 0 40px;border-bottom:1px solid var(--line-2)}
+.eyebrow{
+  font-family:var(--mono);font-size:12px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--fg-3);margin-bottom:14px
+}
+h1{font-size:34px;line-height:1.15;letter-spacing:-.02em;font-weight:700}
+.tagline{margin-top:14px;max-width:660px;color:var(--fg-2);font-size:16px}
+.tagline strong{color:var(--fg);font-weight:600}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.links a{
+  font-family:var(--mono);font-size:12.5px;
+  border:1px solid var(--line);border-radius:6px;
+  padding:6px 12px;color:var(--fg);background:var(--bg-2);
+  transition:border-color .15s,color .15s
+}
+.links a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+
+/* ---------- sections ---------- */
+section{padding:48px 0;border-bottom:1px solid var(--line-2)}
+.sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:26px}
+h2{
+  font-family:var(--mono);font-size:13px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--fg)
+}
+.sec-head .rule{flex:1;height:1px;background:var(--line-2)}
+.sec-head .count{font-family:var(--mono);font-size:12px;color:var(--fg-3)}
+
+/* ---------- education ---------- */
+.edu{display:grid;gap:12px}
+.edu-row{
+  display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start;
+  border:1px solid var(--line);border-radius:8px;
+  background:var(--bg-2);padding:16px 18px
+}
+.edu-row h3{font-size:15.5px;font-weight:600}
+.edu-row .school{color:var(--fg-2);font-size:14px;margin-top:3px}
+.edu-meta{
+  font-family:var(--mono);font-size:12px;color:var(--fg-3);
+  text-align:right;white-space:nowrap
+}
+.edu-meta .gpa{display:block;color:var(--green);margin-top:4px}
+.coursework{
+  font-family:var(--mono);font-size:11.5px;color:var(--fg-3);
+  margin-top:10px;grid-column:1/-1;border-top:1px solid var(--line-2);padding-top:10px
+}
+
+/* ---------- skills ---------- */
+.skills{display:grid;gap:18px}
+.skill-row{display:grid;grid-template-columns:172px 1fr;gap:20px;align-items:start}
+.skill-row .label{
+  font-family:var(--mono);font-size:12px;color:var(--fg-2);
+  padding-top:3px;letter-spacing:.02em
+}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{
+  font-family:var(--mono);font-size:11.5px;
+  background:var(--bg-2);border:1px solid var(--line);
+  border-radius:5px;padding:3px 8px;color:var(--fg)
+}
+.tag.hi{border-color:var(--accent);color:var(--accent)}
+
+/* ---------- filters ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:22px}
+.filters button{
+  font-family:var(--mono);font-size:12px;cursor:pointer;
+  background:var(--bg-2);border:1px solid var(--line);color:var(--fg-2);
+  border-radius:20px;padding:5px 13px;transition:all .15s
+}
+.filters button:hover{color:var(--fg);border-color:var(--fg-3)}
+.filters button[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+
+/* ---------- projects ---------- */
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.card{
+  display:flex;flex-direction:column;
+  border:1px solid var(--line);border-radius:8px;
+  background:var(--bg-2);padding:18px;transition:border-color .15s,transform .15s
+}
+.card:hover{border-color:var(--fg-3);transform:translateY(-2px)}
+.card.hidden{display:none}
+.card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.card h3{font-size:15px;font-weight:600;letter-spacing:-.01em}
+.card h3 a{color:var(--fg)}
+.card h3 a:hover{color:var(--accent);text-decoration:none}
+.kind{
+  font-family:var(--mono);font-size:10px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--fg-3);
+  border:1px solid var(--line);border-radius:4px;padding:2px 6px;white-space:nowrap
+}
+.kind[data-k="ai"]{color:var(--purple);border-color:var(--purple)}
+.kind[data-k="ml"]{color:var(--green);border-color:var(--green)}
+.kind[data-k="swe"]{color:var(--accent);border-color:var(--accent)}
+.kind[data-k="data"]{color:var(--amber);border-color:var(--amber)}
+.card p{margin-top:10px;font-size:13.5px;color:var(--fg-2);flex:1}
+.metrics{
+  display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:12px;
+  font-family:var(--mono);font-size:11.5px;color:var(--fg-2)
+}
+.metrics b{color:var(--fg);font-weight:500}
+.stack{
+  display:flex;flex-wrap:wrap;gap:5px;margin-top:14px;
+  padding-top:13px;border-top:1px solid var(--line-2)
+}
+.stack span{font-family:var(--mono);font-size:11px;color:var(--fg-3)}
+.stack span:not(:last-child)::after{content:' ·';color:var(--line)}
+.card-links{display:flex;gap:14px;margin-top:12px;font-family:var(--mono);font-size:11.5px}
+
+/* ---------- footer ---------- */
+footer{
+  padding:32px 0 56px;font-family:var(--mono);font-size:11.5px;
+  color:var(--fg-3);display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between
+}
+
+@media (max-width:760px){
+  header{padding:44px 0 32px}
+  h1{font-size:27px}
+  .projects{grid-template-columns:1fr}
+  .skill-row{grid-template-columns:1fr;gap:8px}
+  .edu-row{grid-template-columns:1fr}
+  .edu-meta{text-align:left}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">AI / ML Engineer · Boston, MA</div>
+  <h1>Naga Kushal Ageeru</h1>
+  <p class="tagline">
+    I build <strong>LLM systems that are measured, not assumed</strong> — agentic RAG,
+    multi-agent pipelines, safety guardrails, and the eval harnesses that prove they work.
+    Comfortable across the stack: model, pipeline, service, and the tooling around it.
+  </p>
+  <nav class="links">
+    <a href="https://github.com/NagaKushal8">GitHub</a>
+    <a href="https://www.linkedin.com/in/kushal-a-uri/">LinkedIn</a>
+    <a href="mailto:kushala.tech@gmail.com">Email</a>
+    <a href="#projects">Projects</a>
+  </nav>
+</header>
+
+<!-- ============ EDUCATION ============ -->
+<section id="education">
+  <div class="sec-head"><h2>Education</h2><span class="rule"></span></div>
+  <div class="edu">
+    <div class="edu-row">
+      <div>
+        <h3>M.S. Data Science</h3>
+        <div class="school">Northeastern University · Boston, MA</div>
+      </div>
+      <div class="edu-meta">2025<span class="gpa">GPA 3.8 / 4.0</span></div>
+      <div class="coursework">
+        Machine Learning · Deep Learning · Computer Vision · MLOps &amp; Data Pipelines ·
+        Large-Scale Data Systems · Applied Statistics · DS Capstone
+      </div>
+    </div>
+    <div class="edu-row">
+      <div>
+        <h3>B.Tech Computer Science &amp; Engineering</h3>
+        <div class="school">Jain University</div>
+      </div>
+      <div class="edu-meta">2023<span class="gpa">GPA 9.0 / 10</span></div>
+      <div class="coursework">
+        Data Structures &amp; Algorithms · Operating Systems · DBMS · Computer Networks ·
+        Software Engineering · Artificial Intelligence
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills">
+  <div class="sec-head"><h2>Skills</h2><span class="rule"></span></div>
+  <div class="skills">
+    <div class="skill-row">
+      <div class="label">Languages</div>
+      <div class="tags">
+        <span class="tag hi">Python</span><span class="tag">SQL</span>
+        <span class="tag">JavaScript</span><span class="tag">C++</span>
+        <span class="tag">R</span><span class="tag">Bash</span>
+        <span class="tag">HTML / CSS</span>
+      </div>
+    </div>
+    <div class="skill-row">
+      <div class="label">LLM &amp; Agents</div>
+      <div class="tags">
+        <span class="tag hi">LangGraph</span><span class="tag hi">LangChain</span>
+        <span class="tag">RAG</span><span class="tag">Multi-Agent Systems</span>
+        <span class="tag">Tool / Function Calling</span><span class="tag">Structured Outputs</span>
+        <span class="tag">Prompt Engineering</span><span class="tag">Guardrails</span>
+        <span class="tag">Hybrid Retrieval (BM25 + Dense)</span><span class="tag">Rerankers</span>
+        <span class="tag">OpenAI API</span><span class="tag">Ollama</span>
+      </div>
+    </div>
+    <div class="skill-row">
+      <div class="label">Evaluation</div>
+      <div class="tags">
+        <span class="tag hi">Eval Harness Design</span><span class="tag">LLM-as-Judge</span>
+        <span class="tag">Faithfulness / Relevancy</span>
+        <span class="tag">Hit Rate · MRR · nDCG</span><span class="tag">Hallucination Detection</span>
+        <span class="tag">Red-teaming</span><span class="tag">Prompt-Injection Testing</span>
+      </div>
+    </div>
+    <div class="skill-row">
+      <div class="label">ML &amp; Deep Learning</div>
+      <div class="tags">
+        <span class="tag hi">PyTorch</span><span class="tag">TensorFlow / Keras</span>
+        <span class="tag">scikit-learn</span><span class="tag">XGBoost</span>
+        <span class="tag">OpenCV</span><span class="tag">YOLOv8 / Ultralytics</span>
+        <span class="tag">CNNs</span><span class="tag">Transfer Learning</span>
+        <span class="tag">Transformers</span><span class="tag">Clustering</span>
+        <span class="tag">imbalanced-learn</span>
+      </div>
+    </div>
+    <div class="skill-row">
+      <div class="label">Data &amp; MLOps</div>
+      <div class="tags">
+        <span class="tag hi">Airflow</span><span class="tag hi">Docker</span>
+        <span class="tag">MLflow</span><span class="tag">DVC</span>
+        <span class="tag">PySpark</span><span class="tag">Hadoop</span>
+        <span class="tag">Pandas / NumPy</span><span class="tag">Terraform</span>
+        <span class="tag">n8n</span>
+      </div>
+    </div>
+    <div class="skill-row">
+      <div class="label">Backend &amp; Infra</div>
+      <div class="tags">
+        <span class="tag hi">FastAPI</span><span class="tag">REST APIs</span>
+        <span class="tag">Serverless Functions</span><span class="tag">Playwright</span>
+        <span class="tag">GCP</span><span class="tag">AWS</span>
+        <span class="tag">Vercel</span><span class="tag">Git</span>
+        <span class="tag">Streamlit</span><span class="tag">React</span>
+      </div>
+    </div>
+    <div class="skill-row">
+      <div class="label">Data Stores</div>
+      <div class="tags">
+        <span class="tag hi">Pinecone</span><span class="tag">Vector DBs</span>
+        <span class="tag">PostgreSQL</span><span class="tag">MySQL</span>
+        <span class="tag">MongoDB</span><span class="tag">Supabase</span>
+        <span class="tag">Oracle DB</span><span class="tag">GCS / S3</span>
+      </div>
+    </div>
+    <div class="skill-row">
+      <div class="label">Analytics</div>
+      <div class="tags">
+        <span class="tag">Power BI</span><span class="tag">Tableau</span>
+        <span class="tag">Airtable</span><span class="tag">Excel</span>
+        <span class="tag">Matplotlib / Seaborn</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects">
+  <div class="sec-head">
+    <h2>Projects</h2><span class="rule"></span>
+    <span class="count" id="count"></span>
+  </div>
+
+  <div class="filters" id="filters">
+    <button data-f="all" aria-pressed="true">All</button>
+    <button data-f="ai" aria-pressed="false">LLM / Agents</button>
+    <button data-f="ml" aria-pressed="false">ML / Vision</button>
+    <button data-f="swe" aria-pressed="false">Software</button>
+    <button data-f="data" aria-pressed="false">Data</button>
+  </div>
+
+  <div class="projects" id="grid">
+
+    <article class="card" data-tags="ai swe">
+      <div class="card-top">
+        <h3><a href="https://github.com/hakeematyab/Queryable-Shared-Reference-Repository">Queryable Shared Reference Repository</a></h3>
+        <span class="kind" data-k="ai">RAG</span>
+      </div>
+      <p>Fully on-premises agentic RAG over scientific literature for Northeastern's Vitek Lab —
+      no external API calls. Hybrid retrieval with reranking, plus a RoBERTa hallucination
+      detector and three-tier trust badges so researchers can see what is actually grounded.
+      Includes a study of four hallucination-mitigation prompting strategies and the
+      &ldquo;lost in the middle&rdquo; context-length effect.</p>
+      <div class="metrics">
+        <span>Hit Rate@5 <b>85.1%</b></span><span>MRR@5 <b>86.4%</b></span>
+        <span>Faithfulness <b>88.6%</b></span><span>Halluc. F1 <b>85.3%</b></span>
+        <span>Latency <b>~4.6s</b></span><span>VRAM <b>~18GB</b></span>
+      </div>
+      <div class="stack">
+        <span>Qwen3 8B</span><span>Gemma embeddings</span><span>GTE Reranker</span>
+        <span>BM25</span><span>Docling</span><span>Ollama</span><span>Python</span><span>React</span>
+      </div>
+      <div class="card-links">
+        <a href="https://github.com/hakeematyab/Queryable-Shared-Reference-Repository">Code</a>
+        <a href="https://youtu.be/rlyYthhlWJY">Demo</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="ai">
+      <div class="card-top">
+        <h3><a href="https://github.com/NagaKushal8/safe-narrate-ai">safe-narrate-ai</a></h3>
+        <span class="kind" data-k="ai">Agents · Safety</span>
+      </div>
+      <p>Multi-agent children's story generator built as a single LangGraph state machine —
+      intent routing, planner, generator, judge, and a bounded revision loop.
+      I replaced a naive substring blocklist with a layered guardrail
+      (word-boundary matching, jailbreak / prompt-injection layer, moderation backstop,
+      output re-screening) and built an eval harness that proves the delta instead of asserting it.</p>
+      <div class="metrics">
+        <span>Unsafe blocked <b>40% → 93%</b></span>
+        <span>Jailbreak success <b>92% → 0%</b></span>
+        <span>False positives <b>40% → 0%</b></span>
+        <span>Accuracy <b>38% → 98%</b></span>
+      </div>
+      <div class="stack">
+        <span>LangGraph</span><span>OpenAI</span><span>Streamlit</span>
+        <span>Python</span><span>Eval harness</span>
+      </div>
+      <div class="card-links">
+        <a href="https://github.com/NagaKushal8/safe-narrate-ai">Code</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="ai swe data">
+      <div class="card-top">
+        <h3><a href="https://github.com/NagaKushal8/askNEU">AskNEU</a></h3>
+        <span class="kind" data-k="ai">RAG · MLOps</span>
+      </div>
+      <p>Production conversational RAG over Northeastern's public knowledge base, deployed
+      end to end. Airflow DAGs scrape and version the corpus into GCS, embed it into Pinecone,
+      and a reranked retrieval layer feeds a GPT-based generator behind a React front end.
+      Built as a real MLOps system — containerised, data-versioned, IaC-provisioned, and tested.</p>
+      <div class="metrics">
+        <span>Scope <b>scraper → pipeline → UI</b></span><span>Orchestration <b>Airflow DAGs</b></span>
+      </div>
+      <div class="stack">
+        <span>Airflow</span><span>Pinecone</span><span>GCP</span><span>Docker</span>
+        <span>DVC</span><span>Terraform</span><span>React</span><span>Python</span>
+      </div>
+      <div class="card-links">
+        <a href="https://github.com/NagaKushal8/askNEU">Code</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="ai swe">
+      <div class="card-top">
+        <h3><a href="https://github.com/NagaKushal8/shopify-ai-audit-agent">Shopify AI Audit Agent</a></h3>
+        <span class="kind" data-k="swe">Agent Harness</span>
+      </div>
+      <p>A runtime harness that turns a coding agent into a CRO auditor: point it at a store URL,
+      get a fully cited report. Deterministic Python does the crawling, digesting and assembly;
+      the LLM only emits structured data, so report structure can never drift.
+      Ships with a separate eval harness that scores reports with <em>no golden answer</em> —
+      deterministic citation-existence checks, a caged single-question judge, and gates that
+      cap the score on hallucinated evidence.</p>
+      <div class="metrics">
+        <span>Eval overall <b>0.788</b></span><span>Grounding <b>0.80</b></span>
+        <span>Hallucinated citations <b>0</b></span>
+      </div>
+      <div class="stack">
+        <span>Python</span><span>Playwright</span><span>Agent Skills</span>
+        <span>JSON Schema</span><span>LLM-as-judge</span>
+      </div>
+      <div class="card-links">
+        <a href="https://github.com/NagaKushal8/shopify-ai-audit-agent">Code</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="swe ai">
+      <div class="card-top">
+        <h3><a href="https://github.com/NagaKushal8/Take-home-Assignment">guardrail-reconstruction</a></h3>
+        <span class="kind" data-k="swe">Benchmark Eng.</span>
+      </div>
+      <p>A Terminal-Bench 3 task I authored: reconstruct a decommissioned moderation service's
+      exact behaviour from 74 logged request/response pairs. The rules are handed over — the
+      missing piece is the <em>engine</em>: normalization order, matching in normalized space
+      but redacting in original space via an index map, boundary semantics, overlap resolution,
+      escalation. Graded byte-for-byte on 51 hidden cases, all-or-nothing, with deliberate
+      anti-cheat design.</p>
+      <div class="metrics">
+        <span>Hidden cases <b>51</b></span><span>Machinery decisions <b>~9</b></span>
+        <span>Grading <b>byte-exact</b></span>
+      </div>
+      <div class="stack">
+        <span>Python</span><span>Docker</span><span>Unicode / NFKC</span>
+        <span>pytest</span><span>Shell</span>
+      </div>
+      <div class="card-links">
+        <a href="https://github.com/NagaKushal8/Take-home-Assignment">Code</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="ai swe">
+      <div class="card-top">
+        <h3><a href="https://github.com/NagaKushal8/ai-contract-reviewer">AI Contract Reviewer</a></h3>
+        <span class="kind" data-k="ai">LLM Pipeline</span>
+      </div>
+      <p>Upload a construction contract PDF, get a structured risk analysis: Nevada NRS
+      compliance, owner-favored clauses, insurance-gap analysis against the client's actual
+      coverage, and liquidated-damages review — exported as a downloadable PDF report.
+      Two-tier model routing keeps cost down: a cheap model filters relevant clauses,
+      a stronger one reasons over them.</p>
+      <div class="metrics">
+        <span>Two-stage <b>filter → analyse</b></span><span>Output <b>PDF report</b></span>
+      </div>
+      <div class="stack">
+        <span>Python</span><span>OpenAI</span><span>Mistral</span>
+        <span>PDF parsing</span><span>Hugging Face Spaces</span>
+      </div>
+      <div class="card-links">
+        <a href="https://github.com/NagaKushal8/ai-contract-reviewer">Code</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="ml">
+      <div class="card-top">
+        <h3><a href="https://github.com/NagaKushal8/multi-stage-vision-system-for-poultry-health-cv">Multi-Stage Poultry Health Vision</a></h3>
+        <span class="kind" data-k="ml">Computer Vision</span>
+      </div>
+      <p>Two-stage YOLOv8 pipeline matched to how farm cameras actually work: stage one
+      localises birds and flags abnormal ones from a wide-angle frame, stage two classifies
+      the specific disease on cropped regions. Constraining stage two to already-suspicious
+      crops cuts false disease labels. Includes an honest cross-dataset evaluation showing
+      where the two label spaces diverge, rather than a single flattering number.</p>
+      <div class="metrics">
+        <span>Stage 1 mAP50 <b>0.991</b></span><span>Precision <b>0.993</b></span>
+        <span>Recall <b>0.972</b></span><span>Stage 2 mAP50 <b>0.518</b></span>
+      </div>
+      <div class="stack">
+        <span>YOLOv8</span><span>PyTorch</span><span>OpenCV</span>
+        <span>Roboflow</span><span>Python 3.11</span>
+      </div>
+      <div class="card-links">
+        <a href="https://github.com/NagaKushal8/multi-stage-vision-system-for-poultry-health-cv">Code</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="ml">
+      <div class="card-top">
+        <h3><a href="https://github.com/NagaKushal8/fashion-finder-cv">FashionFinder</a></h3>
+        <span class="kind" data-k="ml">Retrieval · CV</span>
+      </div>
+      <p>Image-to-image retrieval for clothing — no text queries, just the photo. Features are
+      indexed in a configurable vocabulary tree so search stays fast at scale. I benchmarked
+      five descriptors spanning classical and deep (ORB, Opponent SIFT, multi-channel ORB,
+      ORB+ResNet-50, SuperPoint) across 10 configurations, scored on MAP and nDCG for garment,
+      colour, and combined retrieval.</p>
+      <div class="metrics">
+        <span>Best MAP <b>0.887</b></span><span>nDCG <b>0.856</b></span>
+        <span>Configs evaluated <b>10</b></span>
+      </div>
+      <div class="stack">
+        <span>SuperPoint</span><span>ResNet-50</span><span>SIFT / ORB</span>
+        <span>Vocabulary Tree</span><span>PyTorch</span><span>OpenCV</span>
+      </div>
+      <div class="card-links">
+        <a href="https://github.com/NagaKushal8/fashion-finder-cv">Code</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="swe ai">
+      <div class="card-top">
+        <h3><a href="https://github.com/NagaKushal8/landing-hospitality-ai">Landing — Hospitality AI</a></h3>
+        <span class="kind" data-k="swe">Full-Stack · Voice</span>
+      </div>
+      <p>Check-in POC solving the real cost problem: ~25 operational facts per property,
+      all different. Public facts are auto-enriched via web search; the rest are collected by
+      a voice agent that places a real outbound call, is told only which fields are still
+      missing, and has the answers extracted from the transcript. Every field carries
+      provenance (seed / web / voice), a confidence score, and the transcript line it came from.</p>
+      <div class="metrics">
+        <span>Provenance <b>per field</b></span><span>Offline fallback <b>deterministic</b></span>
+      </div>
+      <div class="stack">
+        <span>React 18</span><span>Vite</span><span>Vercel Functions</span>
+        <span>Supabase</span><span>OpenAI</span><span>Vapi</span>
+      </div>
+      <div class="card-links">
+        <a href="https://github.com/NagaKushal8/landing-hospitality-ai">Code</a>
+        <a href="https://landing-hospitality-ai.vercel.app">Live</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="ml data">
+      <div class="card-top">
+        <h3><a href="https://github.com/NagaKushal8/childhood-autism-detection-ml">Childhood Autism Pre-Screening</a></h3>
+        <span class="kind" data-k="ml">Supervised ML</span>
+      </div>
+      <p>Pre-screening classifier over 2,179 pediatric Q-CHAT-10 records to triage children
+      toward specialist referral sooner. The interesting part is robustness: the data is
+      class-imbalanced and 3% of labels were deliberately flipped to simulate annotation
+      noise, so model selection is validated with SMOTE, stratified k-fold and leave-one-out,
+      and reported on MCC and ROC-AUC rather than accuracy alone.</p>
+      <div class="metrics">
+        <span>Best accuracy <b>99.1%</b></span><span>Records <b>2,179</b></span>
+        <span>Models compared <b>6+</b></span>
+      </div>
+      <div class="stack">
+        <span>scikit-learn</span><span>XGBoost</span><span>TensorFlow</span>
+        <span>SMOTE</span><span>Pandas</span>
+      </div>
+      <div class="card-links">
+        <a href="https://github.com/NagaKushal8/childhood-autism-detection-ml">Code</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="data ml">
+      <div class="card-top">
+        <h3><a href="https://github.com/NagaKushal8/insurance-customer-segmentation-ml">Insurance Customer Segmentation</a></h3>
+        <span class="kind" data-k="data">Unsupervised ML</span>
+      </div>
+      <p>Unsupervised pipeline over 10,290 policyholder records that resolves into 6 actionable
+      customer profiles. I engineered the business features the raw data lacks — customer
+      lifetime value, commitment ratio, profit percent, retention cost — then compared KMeans,
+      agglomerative and Gaussian-mixture clustering on silhouette and NMI. The output is a set
+      of pricing, cross-sell and marketing-spend decisions, not just cluster IDs.</p>
+      <div class="metrics">
+        <span>Records <b>10,290</b></span><span>Segments <b>6</b></span>
+        <span>Algorithms <b>3</b></span>
+      </div>
+      <div class="stack">
+        <span>scikit-learn</span><span>SciPy</span><span>Yellowbrick</span>
+        <span>category_encoders</span><span>Seaborn</span>
+      </div>
+      <div class="card-links">
+        <a href="https://github.com/NagaKushal8/insurance-customer-segmentation-ml">Code</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="swe data">
+      <div class="card-top">
+        <h3><a href="https://github.com/NagaKushal8/job-tracker-automation">Job Tracker Automation</a></h3>
+        <span class="kind" data-k="data">Automation</span>
+      </div>
+      <p>An n8n workflow that turns an inbox into an analytics dashboard: reads job-related
+      email, uses an LLM for structured extraction of company / role / type, filters noise and
+      rejections, de-duplicates, and writes to Airtable. Runs on a cron and reports
+      daily / weekly / monthly trends and the internship-vs-full-time split.</p>
+      <div class="metrics">
+        <span>Scheduled <b>cron</b></span><span>Dedup <b>built-in</b></span>
+      </div>
+      <div class="stack">
+        <span>n8n</span><span>Airtable</span><span>Gmail API</span>
+        <span>LLM extraction</span>
+      </div>
+      <div class="card-links">
+        <a href="https://github.com/NagaKushal8/job-tracker-automation">Code</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<footer>
+  <span>Naga Kushal Ageeru · AI / ML Engineer · Boston, MA</span>
+  <span><a href="https://github.com/NagaKushal8">github.com/NagaKushal8</a></span>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var grid = document.getElementById('grid');
+  var cards = Array.prototype.slice.call(grid.querySelectorAll('.card'));
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('#filters button'));
+  var count = document.getElementById('count');
+
+  function render(f) {
+    var shown = 0;
+    cards.forEach(function (c) {
+      var ok = f === 'all' || c.dataset.tags.split(' ').indexOf(f) !== -1;
+      c.classList.toggle('hidden', !ok);
+      if (ok) shown++;
+    });
+    count.textContent = shown + (f === 'all' ? ' repositories' : ' of ' + cards.length);
+  }
+
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () {
+      buttons.forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+      render(b.dataset.f);
+    });
+  });
+
+  render('all');
+})();
+</script>
+
+</body>
+</html>
